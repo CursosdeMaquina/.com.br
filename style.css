@@ -1,0 +1,2227 @@
+/* ============================================================
+   FORMAÇÃO MÁQUINAS PESADAS
+   STYLE.CSS
+   RESPONSIVO - CELULAR / TABLET / COMPUTADOR
+   ============================================================ */
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0d10;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(8, 10, 12, 0.97);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.header-container {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-principal {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo-secundario {
+    margin-top: 5px;
+    color: #ffb000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+
+/* ============================================================
+   MENU
+   ============================================================ */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    position: relative;
+    color: #d4d8dd;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #ffb000;
+    transition: width 0.2s ease;
+}
+
+.menu a:hover {
+    color: #ffb000;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ============================================================
+   BOTÃO MENU MOBILE
+   ============================================================ */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: #15191d;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+    position: relative;
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(5, 8, 10, 0.96) 0%,
+            rgba(5, 8, 10, 0.88) 35%,
+            rgba(5, 8, 10, 0.70) 65%,
+            rgba(5, 8, 10, 0.55) 100%
+        ),
+        url("img/hero-maquinas.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.40)
+        );
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: -180px;
+    right: -150px;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 176, 0, 0.14),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   CONTEÚDO DO HERO
+   ============================================================ */
+
+.hero-grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(300px, 0.7fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-content {
+    padding: 60px 0;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 7px 14px;
+
+    border: 1px solid rgba(255, 176, 0, 0.5);
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.30);
+
+    color: #ffb000;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+    max-width: 760px;
+
+    color: #ffffff;
+
+    font-size: clamp(40px, 5vw, 68px);
+
+    font-weight: 900;
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.55);
+}
+
+.hero h1 strong {
+    display: block;
+
+    color: #ffb000;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.65);
+}
+
+.hero-content > p {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #e0e4e8;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.65);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 32px;
+}
+
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+
+.btn {
+    min-height: 50px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #ffb000;
+
+    border: 1px solid #ffb000;
+
+    color: #111111;
+
+    box-shadow:
+        0 8px 25px rgba(255, 176, 0, 0.20);
+}
+
+.btn-primary:hover {
+    background: #ffc233;
+    border-color: #ffc233;
+}
+
+.btn-outline {
+    background: rgba(0, 0, 0, 0.30);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+    border-color: #ffb000;
+    color: #ffb000;
+}
+
+
+/* ============================================================
+   INFORMAÇÕES DO HERO
+   ============================================================ */
+
+.hero-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    margin-top: 45px;
+}
+
+.hero-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-info strong {
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero-info span {
+    color: #c2c7cc;
+
+    font-size: 12px;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ============================================================
+   CARD DO HERO
+   ============================================================ */
+
+.hero-card {
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 30, 35, 0.92),
+            rgba(13, 16, 19, 0.95)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(8px);
+}
+
+.hero-card-top {
+    color: #ffb000;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.hero-machine {
+    margin: 30px 0;
+
+    font-size: 90px;
+
+    line-height: 1;
+}
+
+.hero-card h2 {
+    color: #ffffff;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+.hero-card p {
+    margin-top: 12px;
+
+    color: #aeb5bd;
+
+    font-size: 14px;
+}
+
+.hero-card-button {
+    display: inline-flex;
+
+    margin-top: 25px;
+
+    padding: 13px 22px;
+
+    border-radius: 6px;
+
+    background: #ffb000;
+
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hero-card-button:hover {
+    background: #ffc233;
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   TÍTULOS DAS SEÇÕES
+   ============================================================ */
+
+.section-heading {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+.section-heading > span {
+    color: #ffb000;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    line-height: 1.1;
+}
+
+.section-heading p {
+    max-width: 600px;
+
+    margin: 15px auto 0;
+
+    color: #858d95;
+
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   SEÇÃO DE CURSOS
+   ============================================================ */
+
+.courses-section {
+    padding: 100px 0;
+
+    background: #0a0d10;
+}
+
+.courses-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* ============================================================
+   CARD DE CURSO
+   ============================================================ */
+
+.course-card {
+    overflow: hidden;
+
+    background: #12161a;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 176, 0, 0.5);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ============================================================
+   IMAGEM DOS CURSOS
+   ============================================================ */
+
+.course-image {
+    width: 100%;
+    height: 260px;
+
+    overflow: hidden;
+
+    background: #1a1f24;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.04);
+}
+
+
+/* ============================================================
+   CONTEÚDO DO CURSO
+   ============================================================ */
+
+.course-content {
+    padding: 27px;
+}
+
+.course-number {
+    color: #ffb000;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.course-content h3 {
+    min-height: 58px;
+
+    margin-top: 8px;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+.course-content p {
+    min-height: 76px;
+
+    margin-top: 13px;
+
+    color: #8f969e;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   PARTE INFERIOR DO CARD
+   ============================================================ */
+
+.course-bottom {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 22px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+}
+
+.price small {
+    color: #727982;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.price strong {
+    margin-top: 3px;
+
+    color: #ffb000;
+
+    font-size: 25px;
+}
+
+
+/* ============================================================
+   BOTÃO COMPRAR
+   ============================================================ */
+
+.btn-course {
+    min-height: 44px;
+
+    padding: 0 20px;
+
+    border: 1px solid #ffb000;
+
+    border-radius: 6px;
+
+    background: #ffb000;
+
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-course:hover {
+    background: #ffc233;
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   VANTAGENS
+   ============================================================ */
+
+.advantages-section {
+    padding: 100px 0;
+
+    background: #101418;
+}
+
+.advantages-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.advantage {
+    padding: 30px 22px;
+
+    text-align: center;
+
+    background: #151a1f;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 12px;
+}
+
+.advantage-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 176, 0, 0.12);
+
+    color: #ffb000;
+
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.advantage h3 {
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+.advantage p {
+    margin-top: 9px;
+
+    color: #858d95;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   CTA
+   ============================================================ */
+
+.cta-section {
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #181d22,
+            #0c0f12
+        );
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-content > span {
+    color: #ffb000;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.cta-content h2 {
+    max-width: 700px;
+
+    margin: 10px auto;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.1;
+}
+
+.cta-content p {
+    margin-bottom: 28px;
+
+    color: #8c939b;
+}
+
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.84);
+
+    overflow-y: auto;
+}
+
+.modal.active,
+.modal.ativo {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+
+    width: min(560px, 100%);
+
+    max-height: 95vh;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: #151a1f;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.65);
+}
+
+
+/* ============================================================
+   FECHAR MODAL
+   ============================================================ */
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #252b31;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    transition:
+        background 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #ffb000;
+
+    color: #111111;
+}
+
+
+/* ============================================================
+   CABEÇALHO DO MODAL
+   ============================================================ */
+
+.modal-header {
+    padding-right: 40px;
+}
+
+.modal-header span {
+    color: #ffb000;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.modal-header h2 {
+    margin-top: 6px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+}
+
+
+/* ============================================================
+   CURSO SELECIONADO
+   ============================================================ */
+
+.selected-course {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: #0d1013;
+
+    border-radius: 9px;
+}
+
+.selected-course small,
+.modal-price small {
+    display: block;
+
+    color: #777f88;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.selected-course strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   PREÇO DO MODAL
+   ============================================================ */
+
+.modal-price {
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+.modal-price strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #ffb000;
+
+    font-size: 34px;
+
+    line-height: 1.2;
+}
+
+
+/* ============================================================
+   INSTRUÇÕES PIX
+   ============================================================ */
+
+.pix-instructions {
+    margin-top: 25px;
+}
+
+.pix-instructions h3,
+.pix-code-area h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+.pix-instructions p,
+.pix-code-area p {
+    margin-top: 5px;
+
+    color: #858d95;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   CHAVE PIX
+   ============================================================ */
+
+.pix-key-box {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+.pix-key-box input {
+    min-width: 0;
+
+    flex: 1;
+
+    height: 48px;
+
+    padding: 0 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #0b0d10;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.pix-key-box input:focus {
+    border-color: #ffb000;
+}
+
+.pix-key-box button {
+    min-width: 120px;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    background: #ffb000;
+
+    color: #111111;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pix-key-box button:hover {
+    background: #ffc233;
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   MENSAGEM PIX
+   ============================================================ */
+
+.pix-message {
+    min-height: 20px;
+
+    margin-top: 10px;
+
+    color: #8f969e;
+
+    font-size: 12px;
+}
+
+.pix-message strong {
+    color: #ffb000;
+}
+
+.pix-message.erro {
+    color: #ff6d6d;
+}
+
+
+/* ============================================================
+   PIX COPIA E COLA
+   ============================================================ */
+
+.pix-code-area {
+    margin-top: 25px;
+}
+
+.pix-code-area textarea {
+    width: 100%;
+
+    min-height: 105px;
+
+    margin-top: 12px;
+
+    padding: 13px;
+
+    resize: vertical;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #0b0d10;
+
+    color: #d7dbe0;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.pix-code-area textarea:focus {
+    border-color: #ffb000;
+}
+
+
+/* ============================================================
+   AVISO PAGAMENTO
+   ============================================================ */
+
+.payment-warning {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-left:
+        3px solid #ffb000;
+
+    background:
+        rgba(255, 176, 0, 0.06);
+}
+
+.payment-warning strong {
+    color: #ffb000;
+
+    font-size: 13px;
+}
+
+.payment-warning p {
+    margin-top: 5px;
+
+    color: #a0a6ad;
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   BOTÃO WHATSAPP
+   ============================================================ */
+
+.btn-whatsapp {
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-top: 20px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background: #20c978;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background: #25dc83;
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   BOTÃO SECUNDÁRIO DO MODAL
+   ============================================================ */
+
+.btn-secondary-modal {
+    width: 100%;
+
+    min-height: 45px;
+
+    margin-top: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.btn-secondary-modal:hover {
+    border-color: #ffb000;
+
+    color: #ffb000;
+}
+
+
+/* ============================================================
+   WHATSAPP FLUTUANTE
+   ============================================================ */
+
+.whatsapp-float {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 1500;
+
+    min-height: 52px;
+
+    padding: 0 20px;
+
+    border: 0;
+
+    border-radius: 30px;
+
+    background: #20c978;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    background: #25dc83;
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    padding-top: 55px;
+
+    background: #080a0c;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.footer h3 {
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+.footer p {
+    margin-top: 8px;
+
+    color: #747b84;
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #9ca2aa;
+
+    font-size: 13px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffb000;
+}
+
+.footer-bottom {
+    margin-top: 45px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    color: #5f666e;
+
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   TABLET / NOTEBOOK
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        min-height: auto;
+
+        padding: 80px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .hero-content {
+        padding: 20px 0 0;
+    }
+
+    .hero-card {
+        width: 100%;
+
+        max-width: 500px;
+
+        margin: 0 auto;
+    }
+
+    .advantages-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ============================================================
+   TABLET PEQUENO
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 80px 0 70px;
+
+        background-position: center center;
+    }
+
+    .hero-grid {
+        display: block;
+    }
+
+    .hero-content {
+        text-align: center;
+
+        padding: 0;
+    }
+
+    .hero-tag {
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        font-size:
+            clamp(36px, 7vw, 52px);
+
+        letter-spacing: -1px;
+    }
+
+    .hero-content > p {
+        max-width: 620px;
+
+        margin: 22px auto 0;
+
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-info {
+        justify-content: center;
+    }
+
+    .hero-card {
+        margin-top: 45px;
+    }
+
+    .courses-section,
+    .advantages-section {
+        padding: 80px 0;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+
+    /* ========================================================
+       HEADER
+       ======================================================== */
+
+    .header-container {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding:
+            10px 14px 18px;
+
+        background: #0b0e11;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu.active,
+    .menu.ativo {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 14px 10px;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+
+    /* ========================================================
+       HERO CELULAR
+       ======================================================== */
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            70px 0 55px;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(5, 8, 10, 0.88) 0%,
+                rgba(5, 8, 10, 0.82) 50%,
+                rgba(5, 8, 10, 0.94) 100%
+            ),
+            url("img/hero-maquinas.jpg");
+
+        background-size: cover;
+
+        background-position:
+            center center;
+
+        background-repeat: no-repeat;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(32px, 9vw, 42px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-content > p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 12px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-info {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 10px;
+
+        margin-top: 35px;
+    }
+
+    .hero-info div {
+        padding: 10px 5px;
+
+        text-align: center;
+
+        background:
+            rgba(0, 0, 0, 0.20);
+
+        border-radius: 8px;
+    }
+
+    .hero-info strong {
+        font-size: 15px;
+    }
+
+    .hero-info span {
+        font-size: 10px;
+    }
+
+
+    /* ========================================================
+       CARD HERO
+       ======================================================== */
+
+    .hero-card {
+        margin-top: 35px;
+
+        padding:
+            30px 20px;
+    }
+
+    .hero-machine {
+        margin: 25px 0;
+
+        font-size: 70px;
+    }
+
+    .hero-card h2 {
+        font-size: 22px;
+    }
+
+
+    /* ========================================================
+       CURSOS
+       ======================================================== */
+
+    .courses-section,
+    .advantages-section {
+        padding:
+            70px 0;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-image {
+        height: 230px;
+    }
+
+    .course-content {
+        padding: 22px;
+    }
+
+    .course-content h3,
+    .course-content p {
+        min-height: auto;
+    }
+
+    .course-content h3 {
+        font-size: 21px;
+    }
+
+
+    /* ========================================================
+       VANTAGENS
+       ======================================================== */
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ========================================================
+       CTA
+       ======================================================== */
+
+    .cta-section {
+        padding: 70px 0;
+    }
+
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    /* ========================================================
+       MODAL
+       ======================================================== */
+
+    .modal {
+        align-items: flex-start;
+
+        padding: 10px;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .modal-box {
+        width: 100%;
+
+        max-height: calc(100vh - 40px);
+
+        padding:
+            28px 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 24px;
+    }
+
+    .modal-price strong {
+        font-size: 30px;
+    }
+
+    .pix-key-box {
+        flex-direction: column;
+    }
+
+    .pix-key-box input {
+        width: 100%;
+
+        font-size: 14px;
+    }
+
+    .pix-key-box button {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    .pix-code-area textarea {
+        min-height: 120px;
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR PEQUENO
+   ============================================================ */
+
+@media (max-width: 450px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+
+    /* LOGO */
+
+    .logo-principal {
+        font-size: 17px;
+    }
+
+    .logo-secundario {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding:
+            60px 0 45px;
+
+        background-position:
+            center center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-tag {
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+        padding:
+            6px 11px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+
+    /* INFORMAÇÕES */
+
+    .hero-info {
+        grid-template-columns:
+            1fr 1fr 1fr;
+
+        gap: 6px;
+    }
+
+    .hero-info div {
+        padding:
+            9px 3px;
+    }
+
+    .hero-info strong {
+        font-size: 13px;
+    }
+
+    .hero-info span {
+        font-size: 9px;
+    }
+
+
+    /* CARD HERO */
+
+    .hero-card {
+        padding:
+            25px 17px;
+    }
+
+    .hero-machine {
+        font-size: 60px;
+    }
+
+    .hero-card h2 {
+        font-size: 20px;
+    }
+
+
+    /* CURSOS */
+
+    .course-image {
+        height: 210px;
+    }
+
+    .course-bottom {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .price {
+        align-items: flex-start;
+    }
+
+    .btn-course {
+        width: 100%;
+    }
+
+
+    /* MODAL */
+
+    .modal {
+        padding:
+            8px;
+    }
+
+    .modal-box {
+        padding:
+            25px 16px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+    }
+
+
+    /* WHATSAPP */
+
+    .whatsapp-float {
+        left: 12px;
+        right: 12px;
+
+        bottom: 12px;
+
+        width: auto;
+    }
+
+}
+
+
+/* ============================================================
+   CELULAR MUITO PEQUENO
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .logo-principal {
+        font-size: 15px;
+    }
+
+    .logo-secundario {
+        font-size: 8px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-info {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-info div {
+        width: 100%;
+    }
+
+}
+
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline:
+        3px solid rgba(255, 176, 0, 0.5);
+
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   REDUÇÃO DE MOVIMENTO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}
+
+/* =====================================================
+   DEPOIMENTOS
+===================================================== */
+
+.depoimentos {
+    padding: 90px 6%;
+    background: #080b0f;
+}
+
+.section-title {
+    max-width: 750px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-title span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #f5b400;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+}
+
+.section-title p {
+    color: #8f99a3;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.depoimentos-grid {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+.depoimento-card {
+    padding: 30px;
+
+    background: #11161d;
+
+    border: 1px solid #272f37;
+
+    border-radius: 12px;
+
+    transition: .3s;
+}
+
+
+.depoimento-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #f5b400;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, .30);
+}
+
+
+.estrelas {
+    margin-bottom: 18px;
+
+    color: #f5b400;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+}
+
+
+.depoimento-card > p {
+    min-height: 100px;
+
+    color: #b6bec7;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.aluno {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #252c33;
+}
+
+
+.avatar {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f5b400;
+
+    color: #111;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.aluno strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.aluno span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #7e8994;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   DEPOIMENTOS - CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .depoimentos {
+        padding: 70px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .depoimento-card > p {
+        min-height: auto;
+    }
+
+}

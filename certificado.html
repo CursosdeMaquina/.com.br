@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Validação de certificados - Formação Máquinas Pesadas"
+    >
+
+    <title>Validar Certificado | Formação Máquinas Pesadas</title>
+
+    <link
+        rel="stylesheet"
+        href="certificado.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header class="top-header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            <img
+                src="img/Certificado.png"
+                alt="Certificado"
+                style="width: 50px; height: 50px;"
+            >
+        </div>
+
+        <div>
+
+            <strong>
+                FORMAÇÃO
+            </strong>
+
+            <span>
+                MÁQUINAS PESADAS
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="index.html"
+        class="back-site"
+    >
+        ← Voltar ao site
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     ÁREA DE VALIDAÇÃO
+===================================================== -->
+
+<main>
+
+
+<section
+    class="validation-section"
+    id="validationSection"
+>
+
+
+    <div class="validation-card">
+
+
+        <div class="validation-icon">
+            🔐
+        </div>
+
+
+        <span class="validation-label">
+            VALIDAÇÃO ONLINE
+        </span>
+
+
+        <h1>
+            Validar Certificado
+        </h1>
+
+
+        <p>
+            Digite abaixo o código de validação presente
+            no certificado para consultar sua autenticidade.
+        </p>
+
+
+        <form id="validationForm">
+
+
+            <label for="codigo">
+                Código do certificado
+            </label>
+
+
+            <input
+                type="text"
+                id="codigo"
+                name="codigo"
+                placeholder="Ex: CERT-2026-000001"
+                autocomplete="off"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="validate-button"
+            >
+                🔎 Validar certificado
+            </button>
+
+
+        </form>
+
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+
+        <div class="example-code">
+
+            Exemplo:
+            <strong>CERT-2026-000001</strong>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULTADO DO CERTIFICADO
+===================================================== -->
+
+<section
+    class="certificate-section"
+    id="certificateSection"
+>
+
+
+    <div class="result-header">
+
+
+        <div>
+
+            <span>
+                CERTIFICADO VALIDADO
+            </span>
+
+            <h2>
+                Certificado encontrado
+            </h2>
+
+        </div>
+
+
+        <div class="valid-badge">
+            ✓ VÁLIDO
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         CERTIFICADO
+    ================================================== -->
+
+    <div
+        class="certificate"
+        id="certificate"
+    >
+
+
+        <!-- BORDAS DECORATIVAS -->
+
+        <div class="certificate-border"></div>
+
+        <div class="certificate-inner-border"></div>
+
+
+
+        <!-- MARCA D'ÁGUA -->
+
+        <div class="watermark">
+
+            <div class="watermark-text">
+                FORMAÇÃO MÁQUINAS PESADAS
+            </div>
+
+        </div>
+
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="certificate-header">
+
+
+            <div class="certificate-logo">
+
+                <div class="logo-machine">
+
+                    <img
+                        src="img/Certificado.png"
+                        alt="Certificado"
+                        style="width: 50px; height: 50px;"
+                    >
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        FORMAÇÃO
+                    </strong>
+
+                    <span>
+                        MÁQUINAS PESADAS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="certificate-number">
+
+                CERTIFICADO
+
+                <strong id="certificateCode">
+                    CERT-2026-000001
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- TÍTULO -->
+
+        <div class="certificate-title">
+
+            <span>
+                CERTIFICADO DE CONCLUSÃO
+            </span>
+
+            <h1>
+                CERTIFICADO
+            </h1>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+
+
+        <!-- TEXTO -->
+
+        <div class="certificate-body">
+
+            <p class="intro">
+                Certificamos que
+            </p>
+
+
+            <h2 id="studentName">
+                Nome do Aluno
+            </h2>
+
+
+            <!-- CPF DO ALUNO -->
+
+            <div class="student-cpf">
+
+                CPF:
+                <strong id="studentCPF">
+                    000.000.000-00
+                </strong>
+
+            </div>
+
+
+            <div class="student-line"></div>
+
+
+            <p class="description">
+
+                concluiu com aproveitamento o curso de formação
+                profissional de
+
+            </p>
+
+
+            <h3 id="courseName">
+                Operador de Escavadeira Hidráulica
+            </h3>
+
+
+            <p class="description">
+
+                cumprindo a carga horária de
+
+                <strong id="courseHours">
+                    40 horas
+                </strong>
+
+                de formação.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="certificate-info">
+
+
+            <div class="info-item">
+
+                <span>
+                    DATA DE CONCLUSÃO
+                </span>
+
+                <strong id="courseDate">
+                    06/10/2026
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    CARGA HORÁRIA
+                </span>
+
+                <strong id="hoursInfo">
+                    40 HORAS
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    CPF DO ALUNO
+                </span>
+
+                <strong id="cpfInfo">
+                    000.000.000-00
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    CÓDIGO DE VALIDAÇÃO
+                </span>
+
+                <strong id="codeInfo">
+                    CERT-2026-000001
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RODAPÉ -->
+
+        <div class="certificate-footer">
+
+
+            <!-- ASSINATURA -->
+
+            <div class="signature">
+
+                <img
+                    src="img/Capturar.PNG"
+                    alt="Assinatura"
+                    style="width: 200px; height: 40px;"
+                >
+
+                <div class="signature-line"></div>
+
+                <strong>
+                    ENG. ARTHUR MENDES
+                </strong>
+
+                <span>
+                    Engenheiro Mecânico / de Segurança do Trabalho
+                </span>
+
+                <span>
+                    CREA-SP: 5070015376 | RNP: 261894320
+                </span>
+
+                <span>
+                    Responsável Técnico - NR-12
+                </span>
+
+                <span>
+                    Instituição de Formação
+                </span>
+
+            </div>
+
+
+
+            <!-- QR CODE -->
+
+            <div class="qr-area">
+
+                <div
+                    id="qrcode"
+                    class="qrcode"
+                ></div>
+
+                <span>
+                    Aponte a câmera do celular
+                    para validar
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SELO -->
+
+        <div class="certificate-seal">
+
+            <div class="seal-circle">
+
+                <span>
+                    ✓
+                </span>
+
+                <strong>
+                    CERTIFICADO
+                </strong>
+
+                <small>
+                    VALIDADO
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BOTÕES -->
+
+    <div class="certificate-actions">
+
+
+        <button
+            onclick="imprimirCertificado()"
+            class="print-button"
+        >
+            🖨️ Imprimir / Salvar PDF
+        </button>
+
+
+        <button
+            onclick="novoCertificado()"
+            class="new-button"
+        >
+            🔎 Validar outro código
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
+
+<footer>
+
+    <div>
+        🚜 Formação Máquinas Pesadas
+    </div>
+
+    <p>
+        Sistema de validação de certificados.
+    </p>
+
+    <p class="copyright">
+        © 2026 Formação Máquinas Pesadas
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     BIBLIOTECA QR CODE
+===================================================== -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+></script>
+
+
+<script src="certificado.js"></script>
+
+
+</body>
+
+</html>
